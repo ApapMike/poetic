@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(-45deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5); /* Green-themed gradient */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333; /* Dark text for contrast */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Poem Styles */
+.poem {
+    font-style: italic;
+    margin: 20px 0;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.4rem; /* Increased font size for better readability */
+    color: #2e7d32; /* Dark green text for contrast */
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.poem p {
+    margin: 0;
+}
+
+/* Line Animations with Delay */
+.line {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add delay to each line */
+.line:nth-child(1) { transition-delay: 0.1s; }
+.line:nth-child(2) { transition-delay: 0.3s; }
+.line:nth-child(3) { transition-delay: 0.5s; }
+.line:nth-child(4) { transition-delay: 0.7s; }
+
+/* Container Styles */
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1b5e20; /* Dark green for headings */
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #2e7d32; /* Dark green for paragraphs */
+}
+
+input, button {
+    width: calc(100% - 30px); /* Adjust width to account for padding */
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+button {
+    background-color: #388e3c; /* Green button background */
+    color: #fff; /* White text for contrast */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2e7d32; /* Darker green on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Puzzle Styles */
+.puzzle-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.puzzle-piece {
+    width: 100px;
+    height: 100px;
+    background-color: #a5d6a7; /* Light green for puzzle pieces */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #81c784; /* Slightly darker green border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none; /* Prevent text selection */
+}
+
+.puzzle-piece.selected {
+    background-color: #81c784; /* Highlight selected pieces */
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.blurred-image img {
+    width: 100%;
+    max-width: 300px;
+    filter: blur(80px);
+    transition: filter 0.5s ease;
+}
+
+/* Floating Hearts */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100; /* Ensure hearts are above other elements */
+}
+
+.heart {
+    position: absolute;
+    display: block;
+    color: #4caf50; /* Green hearts */
+    font-size: 20px;
+    animation: float 10s linear infinite;
+    bottom: -100px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+}
+
+/* Music Controls */
+.music-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+#playPauseBtn, #volumeToggleBtn {
+    background: #388e3c; /* Green button background */
+    color: #fff; /* White text for contrast */
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#playPauseBtn:hover, #volumeToggleBtn:hover {
+    background: #2e7d32; /* Darker green on hover */
+}
+
+#volumeSliderContainer {
+    display: none;
+    margin-left: 10px;
+}
+
+#volumeSliderContainer.visible {
+    display: block;
+}
+
+#volumeControl {
+    width: 100px;
+    cursor: pointer;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .poem {
+        font-size: 1.2rem; /* Slightly smaller font size for mobile */
+        padding: 15px;
+    }
+
+    .puzzle-piece {
+        width: 70px;
+        height: 70px;
+        font-size: 0.8rem;
+    }
+
+    .blurred-image img {
+        max-width: 250px;
+    }
+
+    .music-controls {
+        top: 10px;
+        right: 10px;
+        padding: 8px;
+    }
+
+    #playPauseBtn, #volumeToggleBtn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    #volumeControl {
+        width: 80px;
+    }
+
+    input, button {
+        width: calc(100% - 20px); /* Adjust width for smaller screens */
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

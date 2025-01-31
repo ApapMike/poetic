@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Poetic Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Welcome to the Poetic Puzzle</h1>
+        <h2>Happy 7th month of landian mahal</h2>
+        <h3>(P.S. ikaw yung bigaon talaga)</h3>
+
+        <div class="poem">
+            <p>
+                It's been a month since you came into my life,<br>
+                A gentle spark that set my world alight.<br>
+                In every moment, there's a trace of you,<br>
+                A whisper of a dream that's coming true.<br><br>
+        
+                Your laughter, like a melody, so sweet,<br>
+                Echoes in my heart, a joyful beat.<br>
+                Your smile, a sunrise in the morning light,<br>
+                Guides me through the day, so warm and bright.<br><br>
+        
+                In every glance, I see a future there,<br>
+                A place where we can shed our every care.<br>
+                Your presence, like a gentle, calming breeze,<br>
+                Brings comfort, puts my restless soul at ease.<br><br>
+        
+                A month may seem so brief, so short a time,<br>
+                Yet in your gaze, I've found a perfect rhyme.<br>
+                With every day, my feelings grow and bloom,<br>
+                A garden of affection, full and true.<br><br>
+        
+                In shadows deep, where light had scarce a trace,<br>
+                You found me there, in a dark, silent place.<br>
+                With gentle words, you pulled me from despair,<br>
+                And showed me love, a reason to repair.<br><br>
+        
+                The road ahead, a path yet to explore,<br>
+                With hints of roses knocking at your door.<br>
+                A journey lies, with secret steps to take,<br>
+                Unspoken words, decisions yet to make.<br><br>
+        
+                So here's to you, the one who's captured me,<br>
+                In just a month, you've made my heart believe.<br>
+                In love's sweet song, we are the melody,<br>
+                A tune of joy, of hope, of destiny.<br><br>
+        
+                As we journey on, one month and more to come,<br>
+                Know that with you, my heart is truly home.<br>
+                For in this month, you've been my saving grace,<br>
+                A love that fills my life with light and grace.<br>
+            </p>
+        </div>
+        <p>You know the answer.... Just focus on the sixth stanza of the poem and you'll get it.</p>
+        <p>👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼 / 👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼</p>
+        <input type="text" id="passwordInput" placeholder="Enter the answer">
+        <button onclick="checkPassword()">UNLOCK ME</button>
+        <p id="errorMessage" class="hidden">Incorrect answer. Try again!</p>
+    </div>
+
+
+<!-- Music Controls -->
+<div class="music-controls">
+    <button id="playPauseBtn">▶️</button>
+    <button id="volumeToggleBtn">🔊</button>
+    <div id="volumeSliderContainer" class="hidden">
+        <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5">
+    </div>
+</div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="special friend.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

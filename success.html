@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations! - Poetic Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Congratulations!</h1>
+        <p>You unlocked the next stage. Arrange the puzzle pieces to reveal the hidden image.</p>
+        <div class="puzzle-container">
+            <div class="puzzle-piece" data-order="1">
+                <p>Piece 1: A poem about the sky.</p>
+            </div>
+            <div class="puzzle-piece" data-order="2">
+                <p>Piece 2: A poem about the sea.</p>
+            </div>
+            <div class="puzzle-piece" data-order="3">
+                <p>Piece 3: A poem about the earth.</p>
+            </div>
+            <div class="puzzle-piece" data-order="4">
+                <p>Piece 4: A poem about the stars.</p>
+            </div>
+        </div>
+
+        <p>This is a give away na, di ko ma-solve sarili kong puzzle, because why not? Nalilito ako sa sarili kong logic! HAHAHAHAHAAHA!</p>
+        <div class="blurred-image">
+            <img src="images/blurred-photo.png" alt="Blurred Photo" id="blurredPhoto">
+        </div>
+        <button onclick="checkPuzzle()">Submit Arrangement</button>
+        <p id="puzzleMessage" class="hidden">Incorrect arrangement. Try again!</p>
+    </div>
+
+<!-- Music Controls -->
+<div class="music-controls">
+    <button id="playPauseBtn">▶️</button>
+    <button id="volumeToggleBtn">🔊</button>
+    <div id="volumeSliderContainer" class="hidden">
+        <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5">
+    </div>
+</div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="miles apart bridge.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
